@@ -17,6 +17,7 @@ gem 'therubyracer'
 gem 'font-awesome-rails'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'simple_form'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
