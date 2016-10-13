@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>VisitQuad</title>
+  <title>Visit Quadra</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<%= render "layouts/header" %>
-	
+	<p>The flash message below is being very wonky</p>
 	<%= flash.each do |type, message| %>
 		<div class="alert alert-info fade-in">
 		<button class="close" data-dismiss="alert"></button>
 		<%= message %>
 	</div>
 	<% end %>
+	
 	<div class="container">
 	<%= yield %>
-
 	</div>
+
 </body>
 </html>
