@@ -1,29 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-3">
+    <h3><%= @place.name %></h3>
+    <p>
+      <strong>Name:</strong>
+      <%= @place.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @place.name %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @place.address %>
+    </p>
+    <div id="map-canvas" style="width: 230px; height: 230px;"></div>  
 
-<p>
-  <strong>Address:</strong>
-  <%= @place.address %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @place.description %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @place.description %>
-</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @place.phone %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @place.phone %>
-</p>
+    <p>
+      <strong>Website:</strong>
+      <%= @place.website %>
+    </p>
+  </div>
 
-<p>
-  <strong>Website:</strong>
-  <%= @place.website %>
-</p>
+  <div class="col-md-9">
+    <h3>Reviews by People</h3>
+  </div>
+  <%= render 'reviews/form' %>
+  <h4>Visitor reviews</h4>
+  <%= render @reviews %>
+</div>
+
+
+
+
 
 <!-- p>
   <strong>User:</strong>
@@ -35,19 +50,7 @@
   <%= @place.latitude %>
 </p>
 
-<div id="map-canvas" style="width: 230px; height: 230px;"></div>
 
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>
 
-<script type="text/javascript">
-  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map-canvas'), {
-      center: {lat: <% @place.latitude %>, lng: <% @place.longitude %>},
-      zoom: 8;
-      )};
-    // var geocoder = new google.maps.Geocoder();
-
-  }
-</script>
