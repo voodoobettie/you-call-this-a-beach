@@ -25,10 +25,29 @@
   <%= @place.website %>
 </p>
 
-<p>
+<!-- p>
   <strong>User:</strong>
   <%= @place.user_id %>
+</p-->
+
+<p>
+  <%= @place.longitude %>
+  <%= @place.latitude %>
 </p>
+
+<div id="map-canvas" style="width: 230px; height: 230px;"></div>
 
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>
+
+<script type="text/javascript">
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+      center: {lat: <% @place.latitude %>, lng: <% @place.longitude %>},
+      zoom: 8;
+      )};
+    // var geocoder = new google.maps.Geocoder();
+
+  }
+</script>

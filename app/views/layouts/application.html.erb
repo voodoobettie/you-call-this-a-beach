@@ -2,9 +2,10 @@
 <html>
 <head>
   <title>Visit Quadra</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 	<%= render "layouts/header" %>
@@ -20,5 +21,24 @@
 	<%= yield %>
 	</div>
 
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkhnN543M2yQwFVs1x_WjyYvXNXbGhaws&callback=initMap()">
+    </script>
+<script type="text/javascript">
+  var map;
+  var initMap = function() {
+  	var x_coord = 50.0510689;
+  	var y_coord = -125.2273382;
+  	var myCentre = { lat: <% @place.latitude %>, lon: <% @place.longitude %>};
+    map = new google.maps.Map(document.getElementById('map-canvas'), 
+    { center: myCentre,
+      zoom: 8  });
+    var marker = new GoogleAppsMarker({
+    	position: myCentre,
+    	map: map
+    });
+  }
+</script>
 </body>
 </html>

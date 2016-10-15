@@ -21,6 +21,7 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'geocoder'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
