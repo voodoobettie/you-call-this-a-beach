@@ -6,6 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+  <!--added for troubleshooting-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkhnN543M2yQwFVs1x_WjyYvXNXbGhaws">
+</script>
+
 </head>
 <body>
 	<%= render "layouts/header" %>
@@ -22,23 +26,9 @@
 	</div>
 
 
-<script async defer
+<!--script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkhnN543M2yQwFVs1x_WjyYvXNXbGhaws&callback=initMap()">
-    </script>
-<script type="text/javascript">
-  var map;
-  var initMap = function() {
-  	var x_coord = 50.0510689;
-  	var y_coord = -125.2273382;
-  	var myCentre = { lat: <% @place.latitude %>, lon: <% @place.longitude %>};
-    map = new google.maps.Map(document.getElementById('map-canvas'), 
-    { center: myCentre,
-      zoom: 8  });
-    var marker = new GoogleAppsMarker({
-    	position: myCentre,
-    	map: map
-    });
-  }
-</script>
+    </script-->
+
 </body>
 </html>
